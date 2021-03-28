@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+	<Class ClassName="ROOT\cimv2\Win32_OfflineFilesCache">
+		<Version>1.0</Version>
+		<!--
+			METHODS:
+			Enable -Enable [RebootRequired] [ReturnValue]
+			RenameItem -NewPath -OriginalPath -ReplaceIfExists [ReturnValue]
+			RenameItemEx -NewPath -OriginalPath -ReplaceIfExists [ReturnValue]
+			Synchronize -Flags -Paths [ReturnValue]
+			Pin -Deep -Flags -Paths [ReturnValue]
+			Unpin -Deep -Flags -Paths [ReturnValue]
+			DeleteItems -Flags -Paths [ReturnValue]
+			Encrypt -Encrypt -Flags [ReturnValue]
+			SuspendRoot -Path -Suspend [ReturnValue]
+			TransitionOffline -Flags -Force -Path [OpenFiles, ReturnValue]
+			TransitionOnline -Flags -Path [ReturnValue]
+		-->
+		<DefaultNoun>OFCache</DefaultNoun>
+		<InstanceCmdlets>
+			<GetCmdletParameters />
+		</InstanceCmdlets>
+		<StaticCmdlets>
+			<!--Enable-->
+			<Cmdlet>
+				<CmdletMetadata Verb="Set" Noun="OfflineFilesEnabled" ConfirmImpact="Medium"/>
+				<Method MethodName="Enable">
+					<Parameters>
+						<Parameter ParameterName="Enable">
+							<Type PSType="System.Boolean"/>
+							<CmdletParameterMetadata IsMandatory="true" Position="0" PSName="Enabled">
+								<ValidateNotNull />
+							</CmdletParameterMetadata>
+						</Parameter>
+						<Parameter ParameterName="RebootRequired">
+							<Type PSType="System.Boolean"/>
+							<CmdletOutputMetadata PSName="RebootRequired"/>
+						</Parameter>
+					</Parameters>
+				</Method>
+			</Cmdlet>
+		</StaticCmdlets>
+		<CmdletAdapterPrivateData>
+			<Data Name="ClientSideShouldProcess" />
+		</CmdletAdapterPrivateData>
+	</Class>
+</PowerShellMetadata>
+	
